@@ -1,0 +1,3 @@
+/Users/personal/Desktop/MovieBookingSystem/build/CMakeFiles/rebuild_cache.dir
+/Users/personal/Desktop/MovieBookingSystem/build/CMakeFiles/edit_cache.dir
+/Users/personal/Desktop/MovieBookingSystem/build/CMakeFiles/scheduler.dir
