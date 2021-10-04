@@ -163,6 +163,10 @@ bits/stdc++.h
 /Users/personal/Desktop/MovieBookingSystem/bits/stdc++.h
 datamodel.h
 /Users/personal/Desktop/MovieBookingSystem/datamodel.h
+ticket.h
+/Users/personal/Desktop/MovieBookingSystem/ticket.h
+ctime
+-
 
 /Users/personal/Desktop/MovieBookingSystem/datamodel.h
 bits/stdc++.h
@@ -173,4 +177,8 @@ bits/stdc++.h
 /Users/personal/Desktop/MovieBookingSystem/bits/stdc++.h
 bookingInterface.h
 /Users/personal/Desktop/MovieBookingSystem/bookingInterface.h
+
+/Users/personal/Desktop/MovieBookingSystem/ticket.h
+bits/stdc++.h
+/Users/personal/Desktop/MovieBookingSystem/bits/stdc++.h
 

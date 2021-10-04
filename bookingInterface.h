@@ -1,6 +1,10 @@
 #include "bits/stdc++.h"
 using namespace std;
 #include "datamodel.h"
+#include "ticket.h"
+#include <ctime>
+
+
 
 class MovieBookingInterface 
 {
@@ -8,8 +12,8 @@ class MovieBookingInterface
     virtual ~MovieBookingInterface() = default;
     virtual void initSession(int userID)=0;
     virtual void getFreeSeats(int userID, string date, string moviename, int screen) = 0;
-    virtual void book(int userID, string date, string moviename, int screen, vector<int> seatNumbers) = 0;
-    virtual void makePayment(int userID, string date, string moviename, int screen, vector<int> seatNumbers) = 0;
+    virtual int book(int userID, string date, string moviename, int screen, vector<int> seatNumbers) = 0;
+    virtual Ticket makePayment(int userID, string date, string moviename, int screen, vector<int> seatNumbers) = 0;
     virtual void exitSession(int userID)=0;
 };
 
@@ -17,26 +21,33 @@ class MovieBookingConcrete : public MovieBookingInterface
 {
     DataModel model;
     map<int,int> sessions;     // a map of session and the timestamp when they were last active;
+    map<int,pair<string,vector<int> > > seatsData;  // seats a particular user has booked
 public:
     void initSession(int userID)
     {
-        cout << "concrete initSession" << endl;
+        sessions[userID]=time(0);
     }
     void getFreeSeats(int userID, string date, string moviename, int screen)
     {
-        cout << "concrete getFreeSeats" << endl;
+        model.getAvailableSeats(date,moviename,screen);
     }
-    void book(int userID, string date, string moviename, int screen, vector<int> seatNumbers)
+    int book(int userID, string date, string moviename, int screen, vector<int> seatNumbers)
     {
-        cout << "concrete book" << endl;
+        if(seatNumbers.size()>5)
+        {
+            return -1;
+        }
+        model.reserveSeats(date,moviename,screen,seatNumbers);
+        seatsData[userID] = make_pair()
     }
-    void makePayment(int userID, string date, string moviename, int screen, vector<int> seatNumbers)
+
+    Ticket makePayment(int userID, string date, string moviename, int screen, vector<int> seatNumbers)
     {
-        cout << "concrete makePayment" << endl;
+        
     }
     void exitSession(int userID)
     {
-        cout << "concrete exitSession" << endl;
+        sessions.erase(userID);
     }
 };
 
