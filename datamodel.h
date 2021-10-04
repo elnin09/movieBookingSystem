@@ -29,6 +29,8 @@ class DataModelAbstract
   public:
   virtual vector<int> getAvailableSeats(string key)=0;
   virtual void reserveSeats(string key,vector<int> seats)=0;
+  virtual void bookSeats(string key,vector<int> seats)=0;
+  virtual void freeSeats(string key,vector<int>seats)=0;
   virtual void insertShow(string key,vector<seat> seats)=0; //admin APIS
   virtual void removeShow(string key,vector<seat> seats)=0; //admin APIS
 };
@@ -55,11 +57,20 @@ void reserveSeats(string key,vector<int> seats)
 {
     cout<<"abstract implementation";
 }
-void insertShow(string date,string moviename,int screen,vector<seat> seats)
+void bookSeats(string key,vector<int> seats)
+{
+    cout<<"abstract implementation";
+}
+
+void freeSeats(string key,vector<int> seats)
+{
+    cout<<"return free seats";
+}
+void insertShow(string key,vector<seat> seats)
 {
     cout<<"insert show implementation"<<endl;
 }
-void removeShow(string date,string moviename,int screen,vector<seat> seats)
+void removeShow(string key,vector<seat> seats)
 {
     cout<<"NO OP as of now"<<endl;
 }
