@@ -6,7 +6,7 @@ class PaymentGateWay
 {
 public:
 virtual ~PaymentGateWay() = default;
-virtual int makePayment()=0;
+virtual int makePayment(int tries)=0;
 };
 
 
@@ -14,11 +14,15 @@ class PaymentGateWayConcrete
 {
 
 public:
-int makePayment() 
+int makePayment(int tries) 
 {
     if(rand()%5==0)
     {
-        return -1;
+        if(tries==1)
+        {
+            return -1;
+        }   
+        return makePayment(1);
     }
     return 1;
 }  

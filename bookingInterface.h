@@ -14,7 +14,7 @@ class MovieBookingInterface
     virtual void initSession(int userID)=0;
     virtual vector<int> getFreeSeats(int userID, string date, string moviename, int screen) = 0;
     virtual int reserveFreeSeats(int userID, string date, string moviename, int screen, vector<int> seatNumbers) = 0;
-    virtual Ticket makePayment(int userID, string date, string moviename, int screen, vector<int> seatNumbers) = 0;
+    virtual TicketData makePayment(int userID, string date, string moviename, int screen, vector<int> seatNumbers) = 0;
     virtual void exitSession(int userID)=0;
 };
 
@@ -25,9 +25,6 @@ class MovieBookingConcrete : public MovieBookingInterface
     map<int,int> sessions;     // a map of session and the timestamp when they were last active;
     map<int,pair<string,vector<int> > > seatsData;  // seats a particular user has booked
 public:
-    MovieBookingConcrete()
-    {
-    }
     void initSession(int userID)
     {
         sessions[userID]=time(0);
@@ -49,9 +46,23 @@ public:
         return 1;
     }
 
-    Ticket makePayment(int userID, string date, string moviename, int screen, vector<int> seatNumbers)
+    TicketData makePayment(int userID, string date, string moviename, int screen, vector<int> seatNumbers)
     { 
-
+      TicketData movieTicket;
+      string key = date+","+moviename+","+ to_string(screen);
+      if(payment.makePayment(5)!=-1)
+      {
+        model.bookSeats(key,seatNumbers);
+        seatsData.erase(userID);
+        movieTicket.errorCode = 1;
+        movieTicket.ticketID = rand();
+      }
+      else
+      {
+        movieTicket.errorCode = -1;
+        exitSession(userID);
+      }
+      return movieTicket;
     }
     void exitSession(int userID)
     {

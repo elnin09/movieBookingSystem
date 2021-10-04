@@ -32,7 +32,7 @@ class DataModelAbstract
   virtual void bookSeats(string key,vector<int> seats)=0;
   virtual void freeSeats(string key,vector<int>seats)=0;
   virtual void insertShow(string key,vector<seat> seats)=0; //admin APIS
-  virtual void removeShow(string key,vector<seat> seats)=0; //admin APIS
+  virtual void removeShow(string key)=0; //admin APIS
 };
 
 class DataModel : public DataModelAbstract
@@ -55,23 +55,35 @@ vector<int> getAvailableSeats(string key)
 }
 void reserveSeats(string key,vector<int> seats)
 {
-    cout<<"abstract implementation";
+    vector<seat> allSeats = dataMap[key];
+    for(int i=0;i<seats.size();i++)
+    {
+        allSeats[seats[i]].status = RESERVED;
+    }
 }
 void bookSeats(string key,vector<int> seats)
 {
-    cout<<"abstract implementation";
+    vector<seat> allSeats = dataMap[key];
+    for(int i=0;i<seats.size();i++)
+    {
+        allSeats[seats[i]].status = BOOKED;
+    }
 }
 
 void freeSeats(string key,vector<int> seats)
 {
-    cout<<"return free seats";
+    vector<seat> allSeats = dataMap[key];
+    for(int i=0;i<seats.size();i++)
+    {
+        allSeats[seats[i]].status = FREE;
+    }
 }
 void insertShow(string key,vector<seat> seats)
 {
-    cout<<"insert show implementation"<<endl;
+    dataMap[key] = seats;
 }
-void removeShow(string key,vector<seat> seats)
+void removeShow(string key)
 {
-    cout<<"NO OP as of now"<<endl;
+    dataMap.erase(key);
 }
 };

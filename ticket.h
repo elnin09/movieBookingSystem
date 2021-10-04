@@ -2,8 +2,10 @@
 
 using namespace std;
 
-class Ticket
+class TicketData
 {
+ public:
+ int errorCode;   
  int ticketID;
  string description;
 };
