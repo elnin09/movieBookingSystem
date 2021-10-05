@@ -117,5 +117,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/scheduler.dir/DependInfo.cmake"
+  "CMakeFiles/moviebookingsystem.dir/DependInfo.cmake"
   )

@@ -9,7 +9,7 @@ set(CMAKE_BUILD_TYPE Debug)
 
 project(main)
 
-add_executable (scheduler main.cpp
+add_executable (moviebookingsystem main.cpp
 datamodel.h
 bookingInterface.h
 )

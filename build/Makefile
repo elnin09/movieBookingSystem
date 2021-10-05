@@ -130,17 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named scheduler
+# Target rules for targets named moviebookingsystem
 
 # Build rule for target.
-scheduler: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scheduler
-.PHONY : scheduler
+moviebookingsystem: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 moviebookingsystem
+.PHONY : moviebookingsystem
 
 # fast build rule for target.
-scheduler/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler.dir/build.make CMakeFiles/scheduler.dir/build
-.PHONY : scheduler/fast
+moviebookingsystem/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/moviebookingsystem.dir/build.make CMakeFiles/moviebookingsystem.dir/build
+.PHONY : moviebookingsystem/fast
 
 main.o: main.cpp.o
 
@@ -148,7 +148,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler.dir/build.make CMakeFiles/scheduler.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/moviebookingsystem.dir/build.make CMakeFiles/moviebookingsystem.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -157,7 +157,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler.dir/build.make CMakeFiles/scheduler.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/moviebookingsystem.dir/build.make CMakeFiles/moviebookingsystem.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -166,7 +166,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler.dir/build.make CMakeFiles/scheduler.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/moviebookingsystem.dir/build.make CMakeFiles/moviebookingsystem.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -177,7 +177,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... scheduler"
+	@echo "... moviebookingsystem"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
