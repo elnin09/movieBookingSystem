@@ -15,6 +15,7 @@ public:
     virtual int reserveFreeSeats(int userID, string date, string moviename, int screen, vector<int> seatNumbers,int timestamp) = 0;
     virtual TicketData makePayment(int userID, string date, string moviename, int screen, vector<int> seatNumbers,int timestamp) = 0;
     virtual void exitSession(int userID,int timestamp) = 0;
+    virtual map<int, pair<string, vector<int> > > getSeatsSessionData()=0;
 };
 
 class MovieBookingConcrete : public MovieBookingInterface
@@ -52,9 +53,9 @@ public:
         {
             return -1;
         }
-        model.reserveSeats(key, seatNumbers);
-        seatsData[userID] = make_pair(key, seatNumbers);
-        return 1;
+        int retval = model.reserveSeats(key, seatNumbers);
+        if(retval==1)seatsData[userID] = make_pair(key, seatNumbers);
+        return retval;
     }
 
     TicketData makePayment(int userID, string date, string moviename, int screen, vector<int> seatNumbers,int timestamp)
@@ -100,6 +101,11 @@ public:
         {
             exitSession(id,currentTimeStamp);
         }
+    }
+
+    map<int, pair<string, vector<int> > > getSeatsSessionData()
+    {
+      return this->seatsData;
     }
 };
 

@@ -10,7 +10,7 @@ virtual int makePayment(int tries)=0;
 };
 
 
-class PaymentGateWayConcrete
+class PaymentGateWayConcrete : public PaymentGateWay
 {
 
 public:
