@@ -177,12 +177,18 @@ bits/stdc++.h
 /Users/personal/Desktop/MovieBookingSystem/main.cpp
 bits/stdc++.h
 /Users/personal/Desktop/MovieBookingSystem/bits/stdc++.h
-bookingInterface.h
-/Users/personal/Desktop/MovieBookingSystem/bookingInterface.h
+runtests.h
+/Users/personal/Desktop/MovieBookingSystem/runtests.h
 
 /Users/personal/Desktop/MovieBookingSystem/payment.h
 bits/stdc++.h
 /Users/personal/Desktop/MovieBookingSystem/bits/stdc++.h
+
+/Users/personal/Desktop/MovieBookingSystem/runtests.h
+bits/stdc++.h
+/Users/personal/Desktop/MovieBookingSystem/bits/stdc++.h
+bookingInterface.h
+/Users/personal/Desktop/MovieBookingSystem/bookingInterface.h
 
 /Users/personal/Desktop/MovieBookingSystem/ticket.h
 bits/stdc++.h

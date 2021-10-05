@@ -34,7 +34,7 @@ public:
     }
 };
 
-class DataModelAbstract
+class DataModelInterface
 {
 
 public:
@@ -46,7 +46,7 @@ public:
     virtual void removeShow(string key) = 0;                     //admin APIS
 };
 
-class DataModel : public DataModelAbstract
+class DataModel : public DataModelInterface
 {
 private:
     mutex datamodellock;

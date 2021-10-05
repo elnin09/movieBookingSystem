@@ -41,7 +41,6 @@ public:
         initSession(userID,timestamp);
         updateTimeStamp(timestamp);
         string key = date + "," + moviename + "," + to_string(screen);
-        cout<<"HERE 1";
         return model.getAvailableSeats(key);
     }
     int reserveFreeSeats(int userID, string date, string moviename, int screen, vector<int> seatNumbers,int timestamp)
@@ -81,11 +80,9 @@ public:
 
     void exitSession(int userID,int timestamp)
     {
-        cout<<"start exitSession"<<endl;
         if(seatsData.find(userID)!=seatsData.end())model.freeSeats(seatsData[userID].first, seatsData[userID].second);
         if(seatsData.find(userID)!=seatsData.end())seatsData.erase(userID);
         if(sessions.find(userID)!=sessions.end())sessions.erase(userID);
-        cout<<"end exitsession"<<endl;
     }
 
     void updateTimeStamp(int currentTimeStamp)

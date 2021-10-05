@@ -6,5 +6,6 @@ CMakeFiles/moviebookingsystem.dir/main.cpp.o: ../bookingInterface.h
 CMakeFiles/moviebookingsystem.dir/main.cpp.o: ../datamodel.h
 CMakeFiles/moviebookingsystem.dir/main.cpp.o: ../main.cpp
 CMakeFiles/moviebookingsystem.dir/main.cpp.o: ../payment.h
+CMakeFiles/moviebookingsystem.dir/main.cpp.o: ../runtests.h
 CMakeFiles/moviebookingsystem.dir/main.cpp.o: ../ticket.h
 
