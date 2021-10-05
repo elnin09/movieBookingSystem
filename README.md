@@ -6,4 +6,4 @@ Build & Execution Steps
 2) cd build
 3) cmake ..
 4) make
-5) ./scheduler
+5) ./moviebookingsystem
